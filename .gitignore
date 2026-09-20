@@ -1,0 +1,11 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Archivos de caché
+__pycache__/
+*.py[cod]
+
+# Entorno y credenciales de correo (CRÍTICO NO SUBIR)
+.env
