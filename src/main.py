@@ -39,9 +39,24 @@ if st.sidebar.button("📥 Descargar y Analizar Bandeja"):
                 # Columna Derecha: Análisis de la IA
                 with col2:
                     st.markdown("### 🤖 Análisis IA")
-                    with st.spinner("Analizando con Ollama en CasaOS..."):
+                    with st.spinner("Analizando con Ollama..."):
                         try:
-                            analisis = process_email(email)
-                            st.markdown(analisis)
+                            resultado = process_email(email)
+                            if resultado["senales"]:
+                                st.warning(
+                                    "⚠️ Posible intento de manipulación de la IA (prompt injection): "
+                                    + "; ".join(resultado["senales"])
+                                    + ". Revisa el correo original antes de fiarte del análisis."
+                                )
+                            if resultado["problemas"]:
+                                st.warning(
+                                    "La respuesta de la IA no sigue el formato esperado ("
+                                    + "; ".join(resultado["problemas"])
+                                    + "). Puede que el correo la haya desviado."
+                                )
+                            st.markdown(resultado["analisis"])
+                            st.caption(
+                                "La respuesta sugerida es solo un borrador: la app no envía nada."
+                            )
                         except Exception as e:
                             st.error(f"Error de conexión con Ollama: {str(e)}")
