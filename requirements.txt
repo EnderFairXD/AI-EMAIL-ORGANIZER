@@ -1,4 +1,4 @@
-streamlit==1.32.0
+streamlit==1.54.0
 langchain==0.1.13
 langchain-community==0.0.29
 imap-tools==1.5.0
