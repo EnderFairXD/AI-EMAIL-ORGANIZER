@@ -1,5 +1,7 @@
 # Organizador de Correo IA
 
+> **Este proyecto continúa en [suite-ia-local](https://github.com/EnderFairXD/suite-ia-local)**, que junta las cinco herramientas de IA local (contratos, documentación, correo, reuniones y estudio) con código común, tests y soporte para textos largos. Este repositorio queda archivado como referencia.
+
 Una herramienta desarrollada con Streamlit y LangChain que se conecta a tu bandeja de correo (vía IMAP), descarga los últimos mensajes y utiliza IA local (Llama 3.1 vía Ollama) para clasificarlos, resumirlos y redactar respuestas, garantizando la privacidad de tus datos.
 
 ## Requisitos Previos
